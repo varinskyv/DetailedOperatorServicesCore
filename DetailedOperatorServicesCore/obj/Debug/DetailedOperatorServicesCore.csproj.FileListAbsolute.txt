@@ -1,0 +1,5 @@
+c:\users\innovatis\documents\visual studio 2017\Projects\DetailedOperatorServicesCore\DetailedOperatorServicesCore\bin\Debug\DetailedOperatorServicesCore.dll
+c:\users\innovatis\documents\visual studio 2017\Projects\DetailedOperatorServicesCore\DetailedOperatorServicesCore\bin\Debug\DetailedOperatorServicesCore.pdb
+c:\users\innovatis\documents\visual studio 2017\Projects\DetailedOperatorServicesCore\DetailedOperatorServicesCore\obj\Debug\DetailedOperatorServicesCore.csprojResolveAssemblyReference.cache
+c:\users\innovatis\documents\visual studio 2017\Projects\DetailedOperatorServicesCore\DetailedOperatorServicesCore\obj\Debug\DetailedOperatorServicesCore.dll
+c:\users\innovatis\documents\visual studio 2017\Projects\DetailedOperatorServicesCore\DetailedOperatorServicesCore\obj\Debug\DetailedOperatorServicesCore.pdb
