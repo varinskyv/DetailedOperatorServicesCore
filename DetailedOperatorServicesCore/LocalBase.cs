@@ -38,7 +38,7 @@ namespace DetailedOperatorServicesCore
 
         private void Init()
         {
-            Deserialize("base.db", ref subscriberList);
+            Deserialize(fileName, ref subscriberList);
         }
 
         private void Deserialize<T>(string fileName, ref List<T> list)
@@ -63,7 +63,7 @@ namespace DetailedOperatorServicesCore
 
         public void Commit()
         {
-            Serialize("subscribers", subscriberList);
+            Serialize(fileName, subscriberList);
         }
 
         private void Serialize<T>(string fileName, List<T> list)
