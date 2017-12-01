@@ -11,6 +11,5 @@ namespace DetailedOperatorServicesCore
         public string IOTarget { get; set; }
         public decimal Cost { get; set; }
         public int Value { get; set; }
-        public int Subscriber { get; set; }
     }
 }
