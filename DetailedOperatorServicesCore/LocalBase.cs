@@ -12,17 +12,15 @@ namespace DetailedOperatorServicesCore
 
         private static string fileName;
 
-        private LocalBase(string fileName)
+        private LocalBase()
         {
-            LocalBase.fileName = fileName;
-
-            Init();
+            //
         }
         
         public static LocalBase getInstance()
         {
             if (instance == null)
-                instance = new LocalBase(fileName);
+                instance = new LocalBase();
             return instance;
         }
 
@@ -36,8 +34,10 @@ namespace DetailedOperatorServicesCore
             }
         }
 
-        private void Init()
+        public void Init(string fileName)
         {
+            LocalBase.fileName = fileName;
+
             Deserialize(fileName, ref subscriberList);
         }
 
