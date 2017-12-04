@@ -107,6 +107,33 @@ namespace DetailedOperatorServicesCore
             return result;
         }
 
+        public int GetSubscriberId(Subscriber subscriber)
+        {
+            Subscriber sub = subscriberList.Find(item => item.Equals(subscriber));
+            if (sub != null)
+                return sub.Id;
+            else
+                return 0;
+        }
+
+        public int GetSubscriberIdByName(string Name)
+        {
+            Subscriber subscriber = subscriberList.Find(item => item.Name.Equals(Name));
+            if (subscriber != null)
+                return subscriber.Id;
+            else
+                return 0;
+        }
+
+        public int GetSubscriberIdByNumber(string Number)
+        {
+            Subscriber subscriber = subscriberList.Find(item => item.Number.Equals(Number));
+            if (subscriber != null)
+                return subscriber.Id;
+            else
+                return 0;
+        }
+
         public int AddSubscriber(Subscriber subscriber)
         {
             int result = 0;
@@ -114,8 +141,8 @@ namespace DetailedOperatorServicesCore
             if (subscriber == null)
                 return result;
 
-            Subscriber sub = subscriberList.Find(item => item.Equals(subscriber));
-            if (sub == null)
+            result = GetSubscriberId(subscriber);
+            if (result == 0)
             {
                 if (subscriberList.Count > 0)
                     subscriber.Id = subscriberList.Max(item => item.Id) + 1;
@@ -129,8 +156,6 @@ namespace DetailedOperatorServicesCore
 
                 result = subscriber.Id;
             }
-            else
-                result = sub.Id;
 
             return result;
         }
