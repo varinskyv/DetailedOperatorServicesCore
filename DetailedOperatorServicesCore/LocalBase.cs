@@ -134,6 +134,11 @@ namespace DetailedOperatorServicesCore
                 return 0;
         }
 
+        public Subscriber GetSubscriberById(int Id)
+        {
+            return subscriberList.Find(item => item.Id == Id);
+        }
+
         public int AddSubscriber(Subscriber subscriber)
         {
             int result = 0;
@@ -155,6 +160,32 @@ namespace DetailedOperatorServicesCore
                     Commit();
 
                 result = subscriber.Id;
+            }
+
+            return result;
+        }
+
+        public int AddConnection(int subscriberId, Connection connection)
+        {
+            int result = 0;
+
+            if (connection == null)
+                return result;
+
+            Subscriber subscriber = GetSubscriberById(subscriberId);
+            if (subscriber != null)
+            {
+                if (subscriber.ConnectionsList.Count > 0)
+                    connection.Id = subscriber.ConnectionsList.Max(item => item.Id) + 1;
+                else
+                    connection.Id = 1;
+
+                subscriber.ConnectionsList.Add(connection);
+
+                if (!IsStartTransaction)
+                    Commit();
+
+                result = connection.Id;
             }
 
             return result;
