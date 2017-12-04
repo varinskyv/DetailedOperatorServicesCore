@@ -11,5 +11,23 @@ namespace DetailedOperatorServicesCore
         public string IOTarget { get; set; }
         public decimal Cost { get; set; }
         public int Value { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            if (Id == ((Connection)obj).Id)
+                return true;
+            else
+                return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id;
+        }
     }
 }
