@@ -13,6 +13,7 @@ namespace DetailedOperatorServicesCore
         OutgoingMMS,
         GPRS,
         WAP,
+        OtherInternet,
         ServiceConnection
     }
 }
